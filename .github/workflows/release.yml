@@ -24,7 +24,7 @@ jobs:
           go-version: 1.18
 
       - name: Build
-        run: go build -v ./...
+        run: go build -v -o pnpm-package-json-inventory-linux-amd64
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -33,4 +33,4 @@ jobs:
           prerelease: true
           title: "Development Build"
           files: |
-            pnpm-package-json-inventory
+            pnpm-package-json-inventory-linux-amd64
