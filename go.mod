@@ -1,4 +1,4 @@
-module github.com/stitch-money/pnpm-package-json-inventory
+module github.com/Stitch-Money/pnpm-package-json-inventory
 
 go 1.17
 

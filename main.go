@@ -17,5 +17,6 @@ func main() {
 		log.Fatal(err)
 	}
 	enc := json.NewEncoder(os.Stdout)
+	enc.SetIndent("", "  ")
 	enc.Encode(npmList)
 }
