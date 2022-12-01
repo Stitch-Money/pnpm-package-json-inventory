@@ -40,7 +40,9 @@ func GetPnpmList() (list []PnpmList, err error) {
 		return nil, err
 	}
 
-	dec := json.NewDecoder(rd)
+	trimRd := NewTrimmer(rd, '[')
+
+	dec := json.NewDecoder(trimRd)
 	err = dec.Decode(&list)
 
 	if err == io.EOF {
