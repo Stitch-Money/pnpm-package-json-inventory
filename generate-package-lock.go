@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 type NpmList struct {
 	Name            string                   `json:"name"`
@@ -20,8 +23,11 @@ type NpmDependency struct {
 func GenerateNpmList(in []PnpmList) (out *NpmList, err error) {
 	deduper := NewDeduper()
 
-	if len(in) != 1 {
+	if len(in) == 0 {
 		return nil, fmt.Errorf("expected one pnpm list")
+	}
+	if len(in) > 1 {
+		log.Println("More than one pnpm list received - using first one")
 	}
 
 	l := in[0]

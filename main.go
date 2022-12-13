@@ -14,7 +14,8 @@ func main() {
 
 	npmList, err := GenerateNpmList(pnpmList)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		os.Exit(0)
 	}
 	enc := json.NewEncoder(os.Stdout)
 	enc.SetIndent("", "  ")
