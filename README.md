@@ -6,6 +6,8 @@ This tool uses the pnpm cli to output a list of all packages, then parses and co
 
 The output is useful for dependency scanning tools which don't have pnpm support, such as Snyk or Semgrep Supply Chain.
 
+This tool is a quick and dirty POC, not intended to be feature-rich or perfect. PRs will be considered, but Issues are unlikely to receive attention except for issues directly impacting Stitch.
+
 ## Install
 `go install github.com/Stitch-Money/pnpm-package-json-inventory@latest`
 
